@@ -10,6 +10,11 @@ namespace ChristmasLightsKata.Models
     {
         public bool On { get; set; }
 
+        internal void Toggle()
+        {
+            On = !On;
+        }
+
         internal void TurnOff()
         {
             On = false;
