@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ChristmasLightsKata
 {
-    public class GridTest
+    public class GridTests
     {
         [Fact]
         public void NonemptyGridOfLights()
