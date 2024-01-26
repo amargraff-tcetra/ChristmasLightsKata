@@ -9,5 +9,10 @@ namespace ChristmasLightsKata.Models
     internal class Light
     {
         public bool On { get; set; }
+
+        internal void TurnOn()
+        {
+            On = true;
+        }
     }
 }
