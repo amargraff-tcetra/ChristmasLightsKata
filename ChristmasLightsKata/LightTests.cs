@@ -19,5 +19,13 @@ namespace ChristmasLightsKata
             light.TurnOn();
             Assert.True(light.On);
         }
+
+        [Fact]
+        public void TurnLightOff()
+        {
+            var light = new Light();
+            light.TurnOff();
+            Assert.True(!light.On);
+        }
     }
 }
