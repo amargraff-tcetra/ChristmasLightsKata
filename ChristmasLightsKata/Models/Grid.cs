@@ -26,8 +26,6 @@ namespace ChristmasLightsKata.Models
             }
         }
 
-        
-
         public void TurnOn()
         {
             for (int w = 0; w <= Width; w++)
@@ -35,6 +33,17 @@ namespace ChristmasLightsKata.Models
                 for (int h = 0; h <= Height; h++)
                 {
                     Lights[w, h].TurnOn();
+                }
+            }
+        }
+
+        public void TurnOff()
+        {
+            for (int w = 0; w <= Width; w++)
+            {
+                for (int h = 0; h <= Height; h++)
+                {
+                    Lights[w, h].TurnOff();
                 }
             }
         }

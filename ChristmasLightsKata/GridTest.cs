@@ -32,5 +32,21 @@ namespace ChristmasLightsKata
             }
         }
 
+        [Fact]
+        public void TurnOffGridOfLights()
+        {
+            var width = 2;
+            var height = 2;
+            var grid = new Grid(width, height);
+            grid.TurnOff();
+            for (var w = 0; w <= width - 1; w++)
+            {
+                for (var h = 0; h <= height - 1; h++)
+                {
+                    Assert.False(grid.Lights[w,h].On);
+                }
+            }
+        }
+
     }
 }
