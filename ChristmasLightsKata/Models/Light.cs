@@ -6,21 +6,21 @@ using System.Threading.Tasks;
 
 namespace ChristmasLightsKata.Models
 {
-    internal class Light
+    public class Light
     {
         public bool On { get; set; }
 
-        internal void Toggle()
+        public void Toggle()
         {
             On = !On;
         }
 
-        internal void TurnOff()
+        public void TurnOff()
         {
             On = false;
         }
 
-        internal void TurnOn()
+        public void TurnOn()
         {
             On = true;
         }
