@@ -12,8 +12,24 @@ namespace ChristmasLightsKata
         [Fact]
         public void NonemptyGridOfLights()
         {
-            var grid = new Grid(0,0);
+            var grid = new Grid(1,1);
             Assert.True(grid.Lights[0,0] != null);
+        }
+
+        [Fact]
+        public void TurnOnGridOfLights()
+        {
+            var width = 2;
+            var height = 2;
+            var grid = new Grid(width, height);
+            grid.TurnOn();
+            for (var w = 0; w <= width - 1; w++)
+            {
+                for (var h = 0; h <= height - 1; h++)
+                {
+                    Assert.True(grid.Lights[w,h].On);
+                }
+            }
         }
 
     }

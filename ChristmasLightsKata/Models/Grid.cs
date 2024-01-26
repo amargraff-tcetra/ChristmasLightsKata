@@ -8,18 +8,35 @@ namespace ChristmasLightsKata.Models
 {
     public class Grid
     {
+        public int Width { get; set; }
+        public int Height { get; set; }
+        public Light[,] Lights { get; set; }
+
         public Grid(int i, int j)
         {
-            Lights = new Light[i+1,j+1];
-            for (int w = 0; w <= i; w++)
+            Width = i - 1;
+            Height = j - 1;
+            Lights = new Light[i,j];
+            for (int w = 0; w <= Width; w++)
             {
-                for(int h = 0; h <= j; h++)
+                for(int h = 0; h <= Height; h++)
                 {
-                    Lights[i,j] = new Light();
+                    Lights[w,h] = new Light();
                 }
             }
         }
 
-        public Light[,] Lights { get; set; }
+        
+
+        public void TurnOn()
+        {
+            for (int w = 0; w <= Width; w++)
+            {
+                for (int h = 0; h <= Height; h++)
+                {
+                    Lights[w, h].TurnOn();
+                }
+            }
+        }
     }
 }
