@@ -47,5 +47,16 @@ namespace ChristmasLightsKata.Models
                 }
             }
         }
+
+        public void Toggle()
+        {
+            for (int w = 0; w <= Width; w++)
+            {
+                for (int h = 0; h <= Height; h++)
+                {
+                    Lights[w, h].Toggle();
+                }
+            }
+        }
     }
 }

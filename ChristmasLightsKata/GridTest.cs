@@ -48,5 +48,23 @@ namespace ChristmasLightsKata
             }
         }
 
+        [Fact]
+        public void ToggleGridOfLights()
+        {
+            var width = 2;
+            var height = 2;
+            var grid = new Grid(width, height);
+            grid.Toggle();
+            for (var w = 0; w <= width - 1; w++)
+            {
+                for (var h = 0; h <= height - 1; h++)
+                {
+                    Assert.True(grid.Lights[w,h].On);
+                }
+            }
+        }
+
+
+
     }
 }
