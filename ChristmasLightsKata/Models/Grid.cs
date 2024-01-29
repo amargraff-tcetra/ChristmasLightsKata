@@ -114,6 +114,22 @@ namespace ChristmasLightsKata.Models
         }
 
         /// <summary>
+        /// Turns off specified consecutive lights.
+        /// </summary>
+        /// <param name="start">Starting zero based light position</param>
+        /// <param name="end">Ending zero based light position</param>
+        public void TurnOff((int x, int y) start, (int x, int y) end)
+        {
+            for (var w = start.x; w <= end.x; w++)
+            {
+                for (int h = start.y; h <= end.y; h++)
+                {
+                    Lights[w, h].TurnOff();
+                }
+            }
+        }
+
+        /// <summary>
         /// Toggles every light in the grid
         /// </summary>
         public void Toggle()

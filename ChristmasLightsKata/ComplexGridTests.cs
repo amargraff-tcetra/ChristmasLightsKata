@@ -64,5 +64,14 @@ namespace ChristmasLightsKata
             grid.Toggle((0, 0), (999, 0));
             Assert.Equal(1000, grid?.OnCount);
         }
+
+        [Fact]
+        public void Example3()
+        {
+            var grid = new Grid(1000, 1000);
+            grid.TurnOn();
+            grid.TurnOff((499, 499), (500, 500));
+            Assert.Equal(4, grid?.OffCount);
+        }
     }
 }
