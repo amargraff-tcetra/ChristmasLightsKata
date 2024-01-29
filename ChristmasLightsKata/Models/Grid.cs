@@ -11,9 +11,33 @@ namespace ChristmasLightsKata.Models
         public int Width { get; set; }
         public int Height { get; set; }
         public Light[,] Lights { get; set; }
+        public int OnCount 
+        { 
+            get 
+            { 
+                var result = 0;
+                for (var w = 0; w <= Width; w++)
+                {
+                    for (var h = 0; h <= Height; h++)
+                    {
+                        if (Lights[w, h].On) result++; 
+                    }
+                }
+                return result;
+            }
+        }
+        public int OffCount 
+        { 
+            get 
+            { 
+                return Count - OnCount; 
+            }
+        }
+        public readonly int Count;
 
         public Grid(int i, int j)
         {
+            Count = i * j;
             Width = i - 1;
             Height = j - 1;
             Lights = new Light[i,j];
@@ -31,6 +55,17 @@ namespace ChristmasLightsKata.Models
             for (int w = 0; w <= Width; w++)
             {
                 for (int h = 0; h <= Height; h++)
+                {
+                    Lights[w, h].TurnOn();
+                }
+            }
+        }
+
+        public void TurnOn((int x,int y) start, (int x,int y) end)
+        {
+            for (var w = start.x; w <= end.x; w++)
+            {
+                for (int h = start.y; h <= end.y; h++)
                 {
                     Lights[w, h].TurnOn();
                 }
