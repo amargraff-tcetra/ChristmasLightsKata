@@ -48,7 +48,30 @@ namespace ChristmasLightsKata.Models
                 return Count - OnCount; 
             }
         }
+        /// <summary>
+        /// The number of lights in the grid.
+        /// </summary>
         public readonly int Count;
+        /// <summary>
+        /// The sum of all the Brightnesses of the lights in the grid.
+        /// </summary>
+        public int TotalBrightness { 
+            get 
+            {
+                var result = 0;
+                for (var w = 0; w <= Width; w++)
+                {
+                    for (var h = 0; h <= Height; h++)
+                    {
+                        result += Lights[w, h].Brightness;
+                    }
+                }
+                return result;
+            } 
+        }
+
+
+
 
         /// <summary>
         /// Grid is a two-dimensional array of lights.

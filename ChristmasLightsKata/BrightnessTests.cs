@@ -25,5 +25,13 @@ namespace ChristmasLightsKata
             light.TurnOff();
             Assert.Equal(0, light.Brightness);
         }
+
+        [Fact]
+        public void TotalBrightness() 
+        {
+            var grid = new Grid(3,3);
+            grid.TurnOn();
+            Assert.Equal(9, grid.TotalBrightness);
+        }
     }
 }
