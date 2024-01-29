@@ -25,7 +25,7 @@ namespace ChristmasLightsKata.Models
         /// Executes Santa's Instructions returning the number of lights On at the end of the instructions.
         /// </summary>
         /// <returns></returns>
-        public int ExecuteInstructions()
+        public void Execute()
         {
             _grid.TurnOn( (887,   9), (959, 629));
             _grid.TurnOn( (454, 398), (844, 448));
@@ -36,7 +36,16 @@ namespace ChristmasLightsKata.Models
             _grid.TurnOn( (351, 678), (951, 908));
             _grid.Toggle( (720, 196), (897, 994));
             _grid.Toggle( (831, 394), (904, 860));
+        }
+
+        public int GetOnCount()
+        {
             return _grid.OnCount;
+        }        
+        
+        public int GetTotalBrightness()
+        {
+            return _grid.TotalBrightness;
         }
     }
 }

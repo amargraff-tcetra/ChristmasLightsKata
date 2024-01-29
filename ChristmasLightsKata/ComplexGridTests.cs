@@ -10,7 +10,6 @@ namespace ChristmasLightsKata
 {
     public class ComplexGridTests
     {
-
         [Fact]
         public void TurnOnRowOfLights()
         {

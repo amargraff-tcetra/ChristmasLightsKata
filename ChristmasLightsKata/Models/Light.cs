@@ -28,6 +28,9 @@ namespace ChristmasLightsKata.Models
             }
         }
 
+        /// <summary>
+        /// A single light that can be On or Not On.
+        /// </summary>
         public Light() 
         {
             _brightness = 0;

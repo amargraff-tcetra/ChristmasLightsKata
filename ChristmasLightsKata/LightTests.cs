@@ -25,7 +25,7 @@ namespace ChristmasLightsKata
         {
             var light = new Light();
             light.TurnOff();
-            Assert.True(!light.On);
+            Assert.False(light.On);
         }
 
         [Fact]

@@ -19,8 +19,17 @@ namespace ChristmasLightsKata
         [Fact]
         public void LightCount()
         {
-            var count = Instructions.ExecuteInstructions();
-            Assert.Equal(230022, count);
+            Instructions.Execute();
+            var onCount = Instructions.GetOnCount();
+            Assert.Equal(230022, onCount);
+        }
+
+        [Fact]
+        public void TotalBrightnessCount()
+        {
+            Instructions.Execute();
+            var totalBrightness = Instructions.GetTotalBrightness();
+            Assert.Equal(539560, totalBrightness);
         }
     }
 }
