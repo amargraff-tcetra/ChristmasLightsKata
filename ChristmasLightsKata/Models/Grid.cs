@@ -39,7 +39,7 @@ namespace ChristmasLightsKata.Models
             }
         }
         /// <summary>
-        /// Count of lights currently Off in the grid
+        /// Count of lights currently not On in the grid
         /// </summary>
         public int OffCount 
         { 
@@ -70,7 +70,7 @@ namespace ChristmasLightsKata.Models
             }
         }
         /// <summary>
-        /// Turns on every light in the grid
+        /// Turns On every light in the grid
         /// </summary>
         public void TurnOn()
         {
@@ -84,7 +84,7 @@ namespace ChristmasLightsKata.Models
         }
 
         /// <summary>
-        /// Turns on specified consecutive lights.
+        /// Turns On specified consecutive lights.
         /// </summary>
         /// <param name="start">Starting zero based light position</param>
         /// <param name="end">Ending zero based light position</param>
@@ -100,7 +100,7 @@ namespace ChristmasLightsKata.Models
         }
 
         /// <summary>
-        /// Turns off every light in the grid
+        /// Turn every light in the grid to not On.
         /// </summary>
         public void TurnOff() 
         {
@@ -114,7 +114,7 @@ namespace ChristmasLightsKata.Models
         }
 
         /// <summary>
-        /// Turns off specified consecutive lights.
+        /// Turns specified consecutive lights to not On.
         /// </summary>
         /// <param name="start">Starting zero based light position</param>
         /// <param name="end">Ending zero based light position</param>
