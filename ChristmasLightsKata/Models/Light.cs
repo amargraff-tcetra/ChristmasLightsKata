@@ -15,6 +15,23 @@ namespace ChristmasLightsKata.Models
         /// When true the light is on, when false the light is not On.
         /// </summary>
         public bool On { get; set; }
+        private int _brightness { get; set; }
+        /// <summary>
+        /// Non-negative integer that represents the brightness of the light.
+        /// </summary>
+        public int Brightness
+        {
+            get => _brightness;
+            set
+            {
+                _brightness = value < 0 ? 0 : value;
+            }
+        }
+
+        public Light() 
+        {
+            _brightness = 0;
+        }
 
         /// <summary>
         /// Toggles the on/not On status of a light.
@@ -30,6 +47,7 @@ namespace ChristmasLightsKata.Models
         public void TurnOff()
         {
             On = false;
+            Brightness -= 1;
         }
 
         /// <summary>
@@ -38,6 +56,7 @@ namespace ChristmasLightsKata.Models
         public void TurnOn()
         {
             On = true;
+            Brightness += 1;
         }
     }
 }
