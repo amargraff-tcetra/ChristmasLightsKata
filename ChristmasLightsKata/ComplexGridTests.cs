@@ -37,7 +37,7 @@ namespace ChristmasLightsKata
         {
             var grid = new Grid(3, 3); //3x3 grid of lights
             grid.TurnOn((1,1),(1,1));//Turns on center light
-            Assert.True(grid.OnCount == 1);
+            Assert.Equal(1, grid?.OnCount);
         }
         
         [Fact]
@@ -46,7 +46,23 @@ namespace ChristmasLightsKata
             var grid = new Grid(3, 3); //3x3 grid of lights
             grid.TurnOn((1,1),(1,1));//Turns on center light
             grid.Toggle();
-            Assert.True(grid.OffCount == 1);
+            Assert.Equal(1, grid?.OffCount);
+        }
+
+        [Fact]
+        public void Example1()
+        {
+            var grid = new Grid(1000, 1000);
+            grid.TurnOn((0, 0), (999, 999));
+            Assert.Equal(1000 * 1000, grid?.OnCount);
+        }
+
+        [Fact]
+        public void Example2()
+        {
+            var grid = new Grid(1000, 1000);
+            grid.Toggle((0, 0), (999, 0));
+            Assert.Equal(1000, grid?.OnCount);
         }
     }
 }

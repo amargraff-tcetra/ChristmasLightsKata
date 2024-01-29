@@ -8,9 +8,21 @@ namespace ChristmasLightsKata.Models
 {
     public class Grid
     {
+        /// <summary>
+        /// Zero based x dimension number of lights in grid.
+        /// </summary>
         public int Width { get; set; }
+        /// <summary>
+        /// Zero based y dimension number of lights in grid.
+        /// </summary>
         public int Height { get; set; }
+        /// <summary>
+        /// Two-dimensional array of Light object.
+        /// </summary>
         public Light[,] Lights { get; set; }
+        /// <summary>
+        /// Count of lights currently On in the grid. 
+        /// </summary>
         public int OnCount 
         { 
             get 
@@ -26,6 +38,9 @@ namespace ChristmasLightsKata.Models
                 return result;
             }
         }
+        /// <summary>
+        /// Count of lights currently Off in the grid
+        /// </summary>
         public int OffCount 
         { 
             get 
@@ -35,6 +50,11 @@ namespace ChristmasLightsKata.Models
         }
         public readonly int Count;
 
+        /// <summary>
+        /// Grid is a two-dimensional array of lights.
+        /// </summary>
+        /// <param name="i">Non-zero based x dimension light count</param>
+        /// <param name="j">Non-zero based y dimension light count</param>
         public Grid(int i, int j)
         {
             Count = i * j;
@@ -49,7 +69,9 @@ namespace ChristmasLightsKata.Models
                 }
             }
         }
-
+        /// <summary>
+        /// Turns on every light in the grid
+        /// </summary>
         public void TurnOn()
         {
             for (int w = 0; w <= Width; w++)
@@ -61,7 +83,12 @@ namespace ChristmasLightsKata.Models
             }
         }
 
-        public void TurnOn((int x,int y) start, (int x,int y) end)
+        /// <summary>
+        /// Turns on specified consecutive lights.
+        /// </summary>
+        /// <param name="start">Starting zero based light position</param>
+        /// <param name="end">Ending zero based light position</param>
+        public void TurnOn((int x,int y) start, (int x,int y) end) 
         {
             for (var w = start.x; w <= end.x; w++)
             {
@@ -72,7 +99,10 @@ namespace ChristmasLightsKata.Models
             }
         }
 
-        public void TurnOff()
+        /// <summary>
+        /// Turns off every light in the grid
+        /// </summary>
+        public void TurnOff() 
         {
             for (int w = 0; w <= Width; w++)
             {
@@ -83,11 +113,30 @@ namespace ChristmasLightsKata.Models
             }
         }
 
+        /// <summary>
+        /// Toggles every light in the grid
+        /// </summary>
         public void Toggle()
         {
             for (int w = 0; w <= Width; w++)
             {
                 for (int h = 0; h <= Height; h++)
+                {
+                    Lights[w, h].Toggle();
+                }
+            }
+        }
+
+        /// <summary>
+        /// Toggles specified consecutive lights.
+        /// </summary>
+        /// <param name="start">Starting zero based light position</param>
+        /// <param name="end">Ending zero based light position</param>
+        public void Toggle((int x, int y) start, (int x, int y) end)
+        {
+            for (var w = start.x; w <= end.x; w++)
+            {
+                for (int h = start.y; h <= end.y; h++)
                 {
                     Lights[w, h].Toggle();
                 }
