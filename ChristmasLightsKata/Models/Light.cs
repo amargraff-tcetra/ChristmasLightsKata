@@ -39,6 +39,7 @@ namespace ChristmasLightsKata.Models
         public void Toggle()
         {
             On = !On;
+            Brightness += 2;
         }
 
         /// <summary>
